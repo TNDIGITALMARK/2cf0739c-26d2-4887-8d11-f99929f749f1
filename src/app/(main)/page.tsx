@@ -1,48 +1,48 @@
+'use client';
+
 import Link from 'next/link';
-import { Monitor, Palette, Video, Smartphone, Bot, Users, MessageSquare, Sparkles } from 'lucide-react';
+import { Monitor, Palette, Video, Smartphone, Bot, Users } from 'lucide-react';
 import { ServiceCard } from '@/components/service-card';
+import { useT } from '@/lib/translations/use-translations';
 
 export default function HomePage() {
+  const { t } = useT();
+
   const services = [
     {
       icon: Monitor,
-      title: 'Website Creation',
-      description: 'Custom responsive websites that convert visitors into customers - from professional landing pages to complex e-commerce platforms'
+      title: t.services.websiteCreation.title,
+      description: t.services.websiteCreation.description
     },
     {
       icon: Palette,
-      title: 'Logo Design',
-      description: 'Brand identity that makes lasting impressions - complete visual identity packages including logos, business cards, and marketing materials'
+      title: t.services.logoDesign.title,
+      description: t.services.logoDesign.description
     },
     {
       icon: Video,
-      title: 'Video Editing',
-      description: 'Professional video content that engages your audience - from social media clips to full promotional campaigns'
-    },
-    {
-      icon: Sparkles,
-      title: 'Video Editing',
-      description: 'Professional video content that engages your audience - from social media clips to full promotional campaigns'
+      title: t.services.videoEditing.title,
+      description: t.services.videoEditing.description
     },
     {
       icon: Smartphone,
-      title: 'App Development',
-      description: 'Mobile and web applications built for your specific business needs - user-friendly interfaces with powerful functionality'
+      title: t.services.appDevelopment.title,
+      description: t.services.appDevelopment.description
     },
     {
       icon: Bot,
-      title: 'Bot Creation',
-      description: 'Automated customer service and lead generation bots - 24/7 support that scales with your business'
-    },
-    {
-      icon: Bot,
-      title: 'Bot Creation',
-      description: 'Automated customer service and lead generation bots - 24/7 support that scales with your business'
+      title: t.services.botCreation.title,
+      description: t.services.botCreation.description
     },
     {
       icon: Users,
-      title: 'Community Management',
-      description: 'Strategic social media presence that builds loyal audiences - content creation, engagement, and growth strategies'
+      title: t.services.communityManagement.title,
+      description: t.services.communityManagement.description
+    },
+    {
+      icon: Palette,
+      title: t.services.flyerDesign.title,
+      description: t.services.flyerDesign.description
     }
   ];
 
@@ -54,17 +54,17 @@ export default function HomePage() {
           <div className="max-w-4xl">
             {/* Main Heading */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-4">
-              JM Service Digital
+              {t.home.hero.title}
             </h1>
 
             {/* Tagline */}
             <p className="text-lg lg:text-xl font-normal tracking-widest uppercase text-black mb-4">
-              INNOVATE. CREATE. DIGITIZE.
+              {t.home.hero.tagline}
             </p>
 
             {/* Subheading */}
             <p className="text-base lg:text-lg text-gray-600 mb-12">
-              Your Partner in Digital Transformation
+              {t.home.hero.subtitle}
             </p>
 
             {/* Services Grid */}
@@ -85,7 +85,7 @@ export default function HomePage() {
                 href="/portfolio"
                 className="inline-block px-8 py-3 bg-[#0080FF] text-white text-sm font-semibold rounded-lg hover:bg-[#0066CC] transition-colors"
               >
-                VIEW OUR WORK
+                {t.common.viewOurWork}
               </Link>
             </div>
           </div>
@@ -97,13 +97,13 @@ export default function HomePage() {
         <div className="container mx-auto px-6 lg:px-20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-black mb-6">
-              Transform Your Digital Presence
+              {t.home.valueProposition.title}
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              From stunning websites to powerful apps - we deliver complete digital solutions that drive real results.
+              {t.home.valueProposition.subtitle}
             </p>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
-              We partner with small to medium businesses, entrepreneurs, and established companies to deliver professional results across multiple digital disciplines - all without requiring you to manage multiple vendors.
+              {t.home.valueProposition.description}
             </p>
           </div>
         </div>
@@ -113,54 +113,54 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-12 text-center">
-            Our Services
+            {t.home.servicesSection.title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="p-6 bg-white rounded-lg border border-gray-200 hover:border-[#0080FF] transition-colors">
               <Monitor className="w-12 h-12 text-[#0080FF] mb-4" strokeWidth={2} />
-              <h3 className="text-xl font-semibold text-black mb-3">Website Creation</h3>
+              <h3 className="text-xl font-semibold text-black mb-3">{t.services.websiteCreation.title}</h3>
               <p className="text-gray-600">
-                Custom responsive websites that convert visitors into customers - starting from professional landing pages to complex e-commerce platforms
+                {t.services.websiteCreation.description}
               </p>
             </div>
 
             <div className="p-6 bg-white rounded-lg border border-gray-200 hover:border-[#0080FF] transition-colors">
               <Palette className="w-12 h-12 text-[#0080FF] mb-4" strokeWidth={2} />
-              <h3 className="text-xl font-semibold text-black mb-3">Logo and Flyer Design</h3>
+              <h3 className="text-xl font-semibold text-black mb-3">{t.services.logoDesign.title}</h3>
               <p className="text-gray-600">
-                Brand identity that makes lasting impressions - complete visual identity packages including logos, business cards, and marketing materials
+                {t.services.logoDesign.description}
               </p>
             </div>
 
             <div className="p-6 bg-white rounded-lg border border-gray-200 hover:border-[#0080FF] transition-colors">
               <Video className="w-12 h-12 text-[#0080FF] mb-4" strokeWidth={2} />
-              <h3 className="text-xl font-semibold text-black mb-3">Video Editing</h3>
+              <h3 className="text-xl font-semibold text-black mb-3">{t.services.videoEditing.title}</h3>
               <p className="text-gray-600">
-                Professional video content that engages your audience - from social media clips to full promotional campaigns
+                {t.services.videoEditing.description}
               </p>
             </div>
 
             <div className="p-6 bg-white rounded-lg border border-gray-200 hover:border-[#0080FF] transition-colors">
               <Smartphone className="w-12 h-12 text-[#0080FF] mb-4" strokeWidth={2} />
-              <h3 className="text-xl font-semibold text-black mb-3">App Development</h3>
+              <h3 className="text-xl font-semibold text-black mb-3">{t.services.appDevelopment.title}</h3>
               <p className="text-gray-600">
-                Mobile and web applications built for your specific business needs - user-friendly interfaces with powerful functionality
+                {t.services.appDevelopment.description}
               </p>
             </div>
 
             <div className="p-6 bg-white rounded-lg border border-gray-200 hover:border-[#0080FF] transition-colors">
               <Bot className="w-12 h-12 text-[#0080FF] mb-4" strokeWidth={2} />
-              <h3 className="text-xl font-semibold text-black mb-3">Bot Creation</h3>
+              <h3 className="text-xl font-semibold text-black mb-3">{t.services.botCreation.title}</h3>
               <p className="text-gray-600">
-                Automated customer service and lead generation bots - 24/7 support that scales with your business
+                {t.services.botCreation.description}
               </p>
             </div>
 
             <div className="p-6 bg-white rounded-lg border border-gray-200 hover:border-[#0080FF] transition-colors">
               <Users className="w-12 h-12 text-[#0080FF] mb-4" strokeWidth={2} />
-              <h3 className="text-xl font-semibold text-black mb-3">Community Management</h3>
+              <h3 className="text-xl font-semibold text-black mb-3">{t.services.communityManagement.title}</h3>
               <p className="text-gray-600">
-                Strategic social media presence that builds loyal audiences - content creation, engagement, and growth strategies
+                {t.services.communityManagement.description}
               </p>
             </div>
           </div>
@@ -171,16 +171,16 @@ export default function HomePage() {
       <section className="bg-[#0080FF] py-20">
         <div className="container mx-auto px-6 lg:px-20 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Business?
+            {t.home.cta.title}
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you achieve your digital goals. Get started with a free consultation today.
+            {t.home.cta.subtitle}
           </p>
           <Link
             href="/contact"
             className="inline-block px-10 py-4 bg-white text-[#0080FF] text-base font-semibold rounded-lg hover:bg-gray-100 transition-colors"
           >
-            GET STARTED
+            {t.home.cta.button}
           </Link>
         </div>
       </section>

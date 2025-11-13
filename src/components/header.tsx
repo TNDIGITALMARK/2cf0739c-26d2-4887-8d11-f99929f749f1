@@ -3,8 +3,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useT } from '@/lib/translations/use-translations';
 
 export function Header() {
+  const { t } = useT();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -13,7 +15,7 @@ export function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold text-black">
-            JM Service Digital
+            {t.header.companyName}
           </Link>
 
           {/* Desktop Navigation */}
@@ -22,25 +24,25 @@ export function Header() {
               href="/"
               className="text-sm font-medium text-black hover:text-[#0080FF] transition-colors"
             >
-              Home
+              {t.common.home}
             </Link>
             <Link
               href="/services"
               className="text-sm font-medium text-black hover:text-[#0080FF] transition-colors"
             >
-              Services
+              {t.common.services}
             </Link>
             <Link
               href="/portfolio"
               className="text-sm font-medium text-black hover:text-[#0080FF] transition-colors"
             >
-              Portfolio
+              {t.common.portfolio}
             </Link>
             <Link
               href="/contact"
               className="px-8 py-3 bg-[#0080FF] text-white text-sm font-semibold rounded-lg hover:bg-[#0066CC] transition-colors"
             >
-              GET STARTED
+              {t.common.getStarted}
             </Link>
           </nav>
 
@@ -48,7 +50,7 @@ export function Header() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 text-black hover:text-[#0080FF]"
-            aria-label="Toggle menu"
+            aria-label={t.header.menuToggle}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -63,28 +65,28 @@ export function Header() {
                 className="text-sm font-medium text-black hover:text-[#0080FF] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Home
+                {t.common.home}
               </Link>
               <Link
                 href="/services"
                 className="text-sm font-medium text-black hover:text-[#0080FF] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Services
+                {t.common.services}
               </Link>
               <Link
                 href="/portfolio"
                 className="text-sm font-medium text-black hover:text-[#0080FF] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Portfolio
+                {t.common.portfolio}
               </Link>
               <Link
                 href="/contact"
                 className="inline-block px-8 py-3 bg-[#0080FF] text-white text-sm font-semibold rounded-lg hover:bg-[#0066CC] transition-colors text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                GET STARTED
+                {t.common.getStarted}
               </Link>
             </div>
           </nav>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { QueryProvider } from "@/components/query-provider";
 import { ZyloProvider } from "@/lib/zylo/provider";
+import { TranslationProvider } from "@/lib/translations/use-translations";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,20 +17,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JM Service Digital | Digital Transformation Services",
-  description: "Transform your digital presence with JM Service Digital. We deliver professional websites, app development, video editing, logo design, bots, and community management services.",
-  keywords: ["web development", "app development", "video editing", "logo design", "bot creation", "community management", "digital services"],
+  title: "JM Service Digital | Services de Transformation Digitale",
+  description: "Transformez votre présence digitale avec JM Service Digital. Nous livrons des sites web professionnels, développement d'applications, montage vidéo, design de logo, bots et services de gestion de communauté.",
+  keywords: ["développement web", "développement d'applications", "montage vidéo", "design de logo", "création de bots", "gestion de communauté", "services digitaux"],
   authors: [{ name: "JM Service Digital" }],
   openGraph: {
-    title: "JM Service Digital | Digital Transformation Services",
-    description: "Professional digital solutions that drive real results - from stunning websites to powerful apps",
+    title: "JM Service Digital | Services de Transformation Digitale",
+    description: "Solutions digitales professionnelles qui génèrent de vrais résultats - des sites web époustouflants aux applications puissantes",
     type: "website",
-    locale: "en_US",
+    locale: "fr_FR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JM Service Digital | Digital Transformation Services",
-    description: "Professional digital solutions that drive real results",
+    title: "JM Service Digital | Services de Transformation Digitale",
+    description: "Solutions digitales professionnelles qui génèrent de vrais résultats",
   },
 };
 
@@ -39,12 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <head>
 
-      
+
         {}
-      
+
         {/* PHOENIX_EDITOR_INJECTION_START */}
         {(process.env.NODE_ENV === 'development' ||
           process.env.NEXT_PUBLIC_ENABLE_PHOENIX_EDITOR === 'true') && (
@@ -87,22 +88,24 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
-        <QueryProvider>
-          <ZyloProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="light"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <TooltipProvider>
-                {children}
-                <Toaster />
-                <Sonner />
-              </TooltipProvider>
-            </ThemeProvider>
-          </ZyloProvider>
-        </QueryProvider>
+        <TranslationProvider locale="fr">
+          <QueryProvider>
+            <ZyloProvider>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="light"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <TooltipProvider>
+                  {children}
+                  <Toaster />
+                  <Sonner />
+                </TooltipProvider>
+              </ThemeProvider>
+            </ZyloProvider>
+          </QueryProvider>
+        </TranslationProvider>
       </body>
     </html>
   );
