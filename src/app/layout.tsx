@@ -19,8 +19,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "JM Service Digital | Digital Transformation Services",
+  description: "Transform your digital presence with JM Service Digital. We deliver professional websites, app development, video editing, logo design, bots, and community management services.",
+  keywords: ["web development", "app development", "video editing", "logo design", "bot creation", "community management", "digital services"],
+  authors: [{ name: "JM Service Digital" }],
+  openGraph: {
+    title: "JM Service Digital | Digital Transformation Services",
+    description: "Professional digital solutions that drive real results - from stunning websites to powerful apps",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JM Service Digital | Digital Transformation Services",
+    description: "Professional digital solutions that drive real results",
+  },
 };
 
 export default function RootLayout({
