@@ -131,35 +131,35 @@ Design optimisé pour la langue française avec espacement typographique appropr
   --container: 1400px;
   --container-center: true;
   --container-padding: 2rem;
-  
+
   /* Color System */
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  
+
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  
+
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  
+
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  
+
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  
+
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  
+
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-  
+
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  
+
   --color-sidebar: hsl(var(--sidebar-background));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -168,12 +168,21 @@ Design optimisé pour la langue française avec espacement typographique appropr
   --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
-  
+
+  /* Classes CSS Françaises Personnalisées pour Tailwind v4 */
+  --color-bleu: hsl(217 91% 60%);                    /* #2563EB - Bleu principal */
+  --color-bleu-principal: hsl(217 91% 60%);          /* #2563EB - Alias */
+  --color-bleu-fonce: hsl(224 76% 40%);              /* #1E40AF - Bleu foncé */
+  --color-bleu-clair: hsl(214 95% 93%);              /* #DBEAFE - Bleu clair */
+  --color-violet: hsl(262 83% 58%);                  /* #7C3AED - Violet accent */
+  --color-secondaire: hsl(215 16% 47%);              /* #64748B - Gris moyen */
+  --color-gris-clair: hsl(210 20% 98%);              /* #F8FAFC - Gris très clair */
+
   /* Border Radius */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
+
   /* Animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -464,40 +473,9 @@ label {
 
 /* ==============================================
    CLASSES UTILITAIRES - Accès Rapide
+   Les classes Tailwind comme text-bleu, bg-bleu, etc. sont maintenant
+   générées automatiquement via @theme
    ============================================== */
-
-/* Couleurs de texte */
-.text-bleu {
-  color: hsl(var(--bleu-principal));
-}
-
-.text-violet {
-  color: hsl(var(--violet-accent));
-}
-
-.text-secondaire {
-  color: hsl(var(--texte-secondaire));
-}
-
-/* Couleurs de fond */
-.bg-bleu {
-  background-color: hsl(var(--bleu-principal));
-  color: white;
-}
-
-.bg-bleu-clair {
-  background-color: hsl(var(--bleu-clair));
-  color: hsl(var(--bleu-fonce));
-}
-
-.bg-violet {
-  background-color: hsl(var(--violet-accent));
-  color: white;
-}
-
-.bg-gris-clair {
-  background-color: hsl(var(--secondary));
-}
 
 /* Styles de conteneur */
 .container-fr {
