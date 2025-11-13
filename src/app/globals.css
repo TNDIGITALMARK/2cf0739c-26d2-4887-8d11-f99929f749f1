@@ -1,77 +1,92 @@
 @import "tailwindcss";
 
+/* Import French-optimized fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
 /*
 ==============================================
-JM SERVICE DIGITAL - DESIGN SYSTEM
-Pixel-Perfect Specifications from Reference
+APPLICATION FRANÇAISE - DESIGN SYSTEM
+Système de conception moderne pour applications francophones
 ==============================================
 
-COLOR SYSTEM (EXACT VALUES FROM DESIGN):
-- Primary Background: #FFFFFF (HSL: 0 0% 100%)
-- Primary Text: #000000 (HSL: 0 0% 0%)
-- Electric Blue (Primary Accent): #0080FF (HSL: 208 100% 50%)
-- Secondary Text: #666666 (HSL: 0 0% 40%)
-- Light Gray Background: #F5F5F5 (HSL: 0 0% 96%)
-- Footer Black: #000000 (HSL: 0 0% 0%)
+PALETTE DE COULEURS:
+- Bleu Principal: #2563EB (HSL: 217 91% 60%) - Bleu électrique moderne
+- Bleu Foncé: #1E40AF (HSL: 224 76% 40%) - Accents et états hover
+- Bleu Clair: #DBEAFE (HSL: 214 95% 93%) - Arrière-plans subtils
+- Violet Accent: #7C3AED (HSL: 262 83% 58%) - Accents créatifs
+- Texte Principal: #0F172A (HSL: 222 47% 11%) - Noir-bleu profond
+- Texte Secondaire: #64748B (HSL: 215 16% 47%) - Gris moyen
+- Arrière-plan: #FFFFFF (HSL: 0 0% 100%) - Blanc pur
+- Arrière-plan Gris: #F8FAFC (HSL: 210 20% 98%) - Gris très clair
 
-All colors MUST be HSL for theme compatibility.
+Design optimisé pour la langue française avec espacement typographique approprié.
 */
 
 :root {
-  /* JM Service Digital Brand Colors - EXACT from design reference */
-  --background: 0 0% 100%;        /* Pure white #FFFFFF */
-  --foreground: 0 0% 0%;          /* Pure black #000000 */
+  /* Palette Française Moderne - Couleurs Principales */
+  --background: 0 0% 100%;           /* Blanc pur #FFFFFF */
+  --foreground: 222 47% 11%;         /* Noir-bleu profond #0F172A */
 
-  /* Electric Blue - Primary Brand Color #0080FF */
-  --primary: 208 100% 50%;        /* Electric blue #0080FF */
-  --primary-foreground: 0 0% 100%; /* White text on blue */
+  /* Bleu Principal - Couleur de marque */
+  --primary: 217 91% 60%;            /* Bleu moderne #2563EB */
+  --primary-foreground: 0 0% 100%;   /* Blanc sur bleu */
+  --primary-hover: 224 76% 40%;      /* Bleu foncé hover #1E40AF */
 
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Cartes et surfaces */
+  --card: 0 0% 100%;                 /* Blanc pur */
+  --card-foreground: 222 47% 11%;    /* Texte foncé */
 
-  /* Popovers with white background */
+  /* Popovers et menus */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --popover-foreground: 222 47% 11%;
 
-  /* Secondary: Light gray background #F5F5F5 */
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondaire: Arrière-plans légers */
+  --secondary: 210 20% 98%;          /* Gris très clair #F8FAFC */
+  --secondary-foreground: 222 47% 11%;
 
-  /* Muted: Gray text #666666 */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Éléments discrets */
+  --muted: 210 20% 98%;              /* Gris clair #F8FAFC */
+  --muted-foreground: 215 16% 47%;   /* Gris moyen #64748B */
 
-  /* Accent: Electric blue for highlights */
-  --accent: 208 100% 50%;
+  /* Accent: Violet créatif */
+  --accent: 262 83% 58%;             /* Violet #7C3AED */
   --accent-foreground: 0 0% 100%;
 
-  /* Destructive: Clean red */
-  --destructive: 0 70% 50%;
+  /* Destructive: Rouge d'avertissement */
+  --destructive: 0 84% 60%;          /* Rouge vif */
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 208 100% 50%;  /* Electric blue ring */
+  /* Bordures et champs */
+  --border: 214 32% 91%;             /* Bleu-gris clair #E2E8F0 */
+  --input: 214 32% 91%;
+  --ring: 217 91% 60%;               /* Anneau focus bleu */
 
-  /* Border radius - 8px from design */
-  --radius: 0.5rem;
+  /* Rayon des bordures - Design moderne */
+  --radius: 0.75rem;                 /* 12px */
 
-  /* Sidebar: Clean white with black text */
+  /* Sidebar: Navigation latérale */
   --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 208 100% 50%;  /* Electric blue */
+  --sidebar-foreground: 222 47% 11%;
+  --sidebar-primary: 217 91% 60%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 208 100% 50%;
+  --sidebar-accent: 210 20% 98%;
+  --sidebar-accent-foreground: 222 47% 11%;
+  --sidebar-border: 214 32% 91%;
+  --sidebar-ring: 217 91% 60%;
 
-  /* Custom color variables for easy access */
-  --electric-blue: 208 100% 50%;   /* #0080FF */
-  --gray-text: 0 0% 40%;            /* #666666 */
-  --light-gray-bg: 0 0% 96%;        /* #F5F5F5 */
+  /* Variables personnalisées pour accès rapide */
+  --bleu-principal: 217 91% 60%;     /* #2563EB */
+  --bleu-fonce: 224 76% 40%;         /* #1E40AF */
+  --bleu-clair: 214 95% 93%;         /* #DBEAFE */
+  --violet-accent: 262 83% 58%;      /* #7C3AED */
+  --texte-principal: 222 47% 11%;    /* #0F172A */
+  --texte-secondaire: 215 16% 47%;   /* #64748B */
+
+  /* Typographie française */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-mono: 'Fira Code', 'Consolas', 'Monaco', monospace;
 }
 
 .dark {
@@ -192,185 +207,365 @@ All colors MUST be HSL for theme compatibility.
   box-sizing: border-box;
 }
 
-/* Typography Foundation - Inter Font (matches modern design) */
-/* Optimized for French language with proper spacing and ligatures */
+/* ==============================================
+   TYPOGRAPHIE FRANÇAISE
+   Optimisée pour la langue française avec espacements appropriés
+   ============================================== */
+
 html {
   font-size: 16px;
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-primary);
   lang: fr;
   hyphens: auto;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: var(--font-primary);
+  font-size: 1rem;           /* 16px */
+  line-height: 1.7;          /* Optimisé pour le français - meilleure lisibilité */
   font-weight: 400;
-  font-feature-settings: "rlig" 1, "calt" 1;
+  font-feature-settings: "rlig" 1, "calt" 1, "liga" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   margin: 0;
   padding: 0;
-  /* French typography: slightly increased spacing for readability */
+  /* Espacement typographique français:
+     - Espace avant les signes de ponctuation doubles (: ; ! ?)
+     - Guillemets français « »
+     - Meilleure lisibilité pour les textes longs */
   word-spacing: 0.05em;
+  letter-spacing: -0.01em;   /* Légèrement resserré pour élégance */
 }
 
-/* Typography Scale - EXACT from design reference */
+/* ==============================================
+   ÉCHELLE TYPOGRAPHIQUE - Hiérarchie Claire
+   Utilise Playfair Display pour les titres (élégance française)
+   ============================================== */
+
 h1 {
-  font-size: 3rem;          /* 48px - Hero heading */
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;        /* 56px - Titres héros */
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: hsl(var(--foreground));
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 h2 {
-  font-size: 2rem;          /* 32px - Section headings */
+  font-family: var(--font-heading);
+  font-size: 2.5rem;        /* 40px - Titres de section */
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+  margin: 0 0 1.25rem 0;
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-size: 1.875rem;      /* 30px - Sous-sections */
+  font-weight: 700;
+  line-height: 1.3;
   letter-spacing: -0.01em;
   color: hsl(var(--foreground));
   margin: 0 0 1rem 0;
 }
 
-h3 {
-  font-size: 1.5rem;        /* 24px - Subsection headings */
+h4 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;        /* 24px */
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.4;
   color: hsl(var(--foreground));
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.875rem 0;
 }
 
-h4 {
+h5 {
+  font-family: var(--font-primary);
   font-size: 1.25rem;       /* 20px */
   font-weight: 600;
   line-height: 1.4;
   color: hsl(var(--foreground));
-  margin: 0 0 0.5rem 0;
-}
-
-h5 {
-  font-size: 1.125rem;      /* 18px */
-  font-weight: 600;
-  line-height: 1.4;
-  color: hsl(var(--foreground));
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.75rem 0;
 }
 
 h6 {
-  font-size: 1rem;          /* 16px */
+  font-family: var(--font-primary);
+  font-size: 1.125rem;      /* 18px */
   font-weight: 600;
   line-height: 1.5;
   color: hsl(var(--foreground));
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.625rem 0;
 }
 
-/* Paragraph and Text Elements */
+/* ==============================================
+   ÉLÉMENTS DE TEXTE
+   ============================================== */
+
 p {
-  margin: 0 0 1rem 0;
-  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.7;
+  color: hsl(var(--foreground));
+}
+
+strong, b {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+em, i {
+  font-style: italic;
 }
 
 a {
-  color: hsl(var(--electric-blue));
+  color: hsl(var(--bleu-principal));
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+  font-weight: 500;
 }
 
 a:hover {
-  color: hsl(208 100% 40%);
+  color: hsl(var(--bleu-fonce));
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
-/* Button Defaults - Electric Blue Style */
+a:focus-visible {
+  outline: 2px solid hsl(var(--bleu-principal));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ==============================================
+   BOUTONS PAR DÉFAUT
+   ============================================== */
+
 button {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-primary);
   font-weight: 600;
-  font-size: 0.875rem;      /* 14px */
+  font-size: 0.9375rem;     /* 15px - lisibilité optimale */
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   outline: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.5rem;
+  background-color: hsl(var(--bleu-principal));
+  color: white;
+}
+
+button:hover {
+  background-color: hsl(var(--bleu-fonce));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px hsla(var(--bleu-principal), 0.3);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 button:focus-visible {
-  outline: 2px solid hsl(var(--electric-blue));
+  outline: 3px solid hsl(var(--bleu-principal) / 0.3);
   outline-offset: 2px;
 }
 
-/* Input and Form Defaults */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==============================================
+   FORMULAIRES ET CHAMPS DE SAISIE
+   ============================================== */
+
 input, textarea, select {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-primary);
   font-size: 1rem;
   color: hsl(var(--foreground));
   background-color: hsl(var(--background));
-  border: 1px solid hsl(var(--border));
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.875rem 1.125rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+input:hover, textarea:hover, select:hover {
+  border-color: hsl(var(--bleu-principal) / 0.4);
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: hsl(var(--electric-blue));
-  box-shadow: 0 0 0 3px hsla(var(--electric-blue), 0.1);
+  border-color: hsl(var(--bleu-principal));
+  box-shadow: 0 0 0 4px hsl(var(--bleu-principal) / 0.1);
 }
 
-/* Shadows - EXACT from design (0px 4px 12px rgba(0,0,0,0.1)) */
+input::placeholder, textarea::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* ==============================================
+   OMBRES - Design Moderne et Élégant
+   ============================================== */
+
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.08);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.1);  /* EXACT from design reference */
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 0.1);
 }
 
 .shadow-lg {
-  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 0.15);  /* Hover state */
+  box-shadow: 0 8px 24px 0 rgb(0 0 0 / 0.12);
 }
 
-/* Service Card Styles - From Design Reference */
-.service-card {
+.shadow-xl {
+  box-shadow: 0 12px 32px 0 rgb(0 0 0 / 0.15);
+}
+
+/* ==============================================
+   CARTES - Style Moderne
+   ============================================== */
+
+.card {
   background: hsl(var(--card));
-  border-radius: 0.5rem;    /* 8px */
-  padding: 1.5rem;          /* 24px */
-  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.1);
-  transition: all 0.3s ease;
-  text-align: center;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid hsl(var(--border));
 }
 
-.service-card:hover {
-  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 0.15);
-  transform: translateY(-2px);
+.card:hover {
+  box-shadow: 0 8px 24px 0 rgb(0 0 0 / 0.12);
+  transform: translateY(-4px);
+  border-color: hsl(var(--bleu-principal) / 0.3);
 }
 
-.service-card .icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
+/* ==============================================
+   CLASSES UTILITAIRES - Accès Rapide
+   ============================================== */
+
+/* Couleurs de texte */
+.text-bleu {
+  color: hsl(var(--bleu-principal));
 }
 
-/* Utility Classes */
-.text-electric-blue {
-  color: hsl(var(--electric-blue));
+.text-violet {
+  color: hsl(var(--violet-accent));
 }
 
-.bg-electric-blue {
-  background-color: hsl(var(--electric-blue));
+.text-secondaire {
+  color: hsl(var(--texte-secondaire));
 }
 
-.text-gray {
-  color: hsl(var(--gray-text));
+/* Couleurs de fond */
+.bg-bleu {
+  background-color: hsl(var(--bleu-principal));
+  color: white;
 }
 
-.bg-light-gray {
-  background-color: hsl(var(--light-gray-bg));
+.bg-bleu-clair {
+  background-color: hsl(var(--bleu-clair));
+  color: hsl(var(--bleu-fonce));
+}
+
+.bg-violet {
+  background-color: hsl(var(--violet-accent));
+  color: white;
+}
+
+.bg-gris-clair {
+  background-color: hsl(var(--secondary));
+}
+
+/* Styles de conteneur */
+.container-fr {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container-fr {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Espacement responsive */
+.section-spacing {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 3rem 0;
+  }
+}
+
+/* ==============================================
+   ANIMATIONS FRANÇAISES - Mouvements Élégants
+   ============================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
